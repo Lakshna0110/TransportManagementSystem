@@ -1,0 +1,226 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\TestProject1\\TestProject1.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\app\\app.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\app\\app.csproj",
+        "projectName": "app",
+        "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\app\\app.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\dao\\dao.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\dao\\dao.csproj"
+              },
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj"
+              },
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\myexceptions\\myexceptions.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\myexceptions\\myexceptions.csproj"
+              },
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\util\\util.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\util\\util.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\dao\\dao.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\dao\\dao.csproj",
+        "projectName": "dao",
+        "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\dao\\dao.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj"
+              },
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\myexceptions\\myexceptions.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\myexceptions\\myexceptions.csproj"
+              },
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\util\\util.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\util\\util.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj",
+        "projectName": "model",
+        "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\myexceptions\\myexceptions.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\myexceptions\\myexceptions.csproj",
+        "projectName": "myexceptions",
+        "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\myexceptions\\myexceptions.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\TestProject1\\TestProject1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\TestProject1\\TestProject1.csproj",
+        "projectName": "TestProject1",
+        "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\TestProject1\\TestProject1.csproj",
+        "packagesPath": "C:\\Users\\VC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\TestProject1\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\VC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\app\\app.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\app\\app.csproj"
+              },
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\dao\\dao.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\dao\\dao.csproj"
+              },
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj"
+              },
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\myexceptions\\myexceptions.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\myexceptions\\myexceptions.csproj"
+              },
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\util\\util.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\util\\util.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.14.0, )"
+            },
+            "NUnit.Analyzers": {
+              "target": "Package",
+              "version": "[3.9.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\util\\util.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\util\\util.csproj",
+        "projectName": "util",
+        "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\util\\util.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj": {
+                "projectPath": "C:\\Users\\VC\\source\\repos\\TransportManagementSystem\\model\\model.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    }
+  }
+}
