@@ -1,6 +1,0 @@
-C:\Users\VC\source\repos\TransportManagementSystem\model\obj\Debug\model.csproj.AssemblyReference.cache
-C:\Users\VC\source\repos\TransportManagementSystem\model\obj\Debug\model.csproj.CoreCompileInputs.cache
-C:\Users\VC\source\repos\TransportManagementSystem\model\bin\Debug\model.dll
-C:\Users\VC\source\repos\TransportManagementSystem\model\bin\Debug\model.pdb
-C:\Users\VC\source\repos\TransportManagementSystem\model\obj\Debug\model.dll
-C:\Users\VC\source\repos\TransportManagementSystem\model\obj\Debug\model.pdb

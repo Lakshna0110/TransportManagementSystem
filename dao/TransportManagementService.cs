@@ -22,8 +22,9 @@ namespace dao
             bool CancelTrip(int tripId);
 
             bool AddPassenger(Passenger passenger);
-            bool BookTrip(Booking booking);
-            bool CancelBooking(int bookingId);
+            bool BookTrip(Booking booking); 
+
+            bool BookTrip(int tripId, int passengerId, DateTime bookingDate); bool CancelBooking(int bookingId);
             List<Booking> GetBookingsByPassenger(int passengerId);
             List<Booking> GetBookingsByTrip(int tripId);
             bool AllocateDriver(int tripId, int driverId);

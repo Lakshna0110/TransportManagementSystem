@@ -13,6 +13,12 @@ namespace app
         static void Main(string[] args)
         {
             TransportManagementServiceImpl service = new TransportManagementServiceImpl();
+            bool running = true;
+            while (running)
+            {
+
+
+
                 Console.WriteLine("\nTransport Management System");
                 Console.WriteLine("1. Add Vehicle");
                 Console.WriteLine("2. Delete Vehicle");
@@ -48,22 +54,22 @@ namespace app
                     switch (choice)
                     {
                         case 1:
-                          Console.Write("Enter Model: ");
-                          string model = Console.ReadLine();
-                           Console.Write("Enter Capacity: ");
+                            Console.Write("Enter Model: ");
+                            string model = Console.ReadLine();
+                            Console.Write("Enter Capacity: ");
                             if (!decimal.TryParse(Console.ReadLine(), out decimal cap))
                             {
                                 Console.WriteLine("Invalid capacity.");
                                 break;
                             }
-                          Console.Write("Enter Type: ");
-                          string type = Console.ReadLine();
-                           Console.Write("Enter Status: ");
-                          string status = Console.ReadLine();
-                          Vehicle v = new Vehicle(0, model, cap, type, status);
-                          bool result = service.AddVehicle(v);
-                          Console.WriteLine(result ? "Vehicle Added" : "Failed to add vehicle.");
-                           break;
+                            Console.Write("Enter Type: ");
+                            string type = Console.ReadLine();
+                            Console.Write("Enter Status: ");
+                            string status = Console.ReadLine();
+                            Vehicle v = new Vehicle(0, model, cap, type, status);
+                            bool result = service.AddVehicle(v);
+                            Console.WriteLine(result ? "Vehicle Added" : "Failed to add vehicle.");
+                            break;
                         case 2:
                             Console.Write("Enter Vehicle ID to delete: ");
                             if (int.TryParse(Console.ReadLine(), out int deleteId))
@@ -78,17 +84,17 @@ namespace app
                             break;
 
                         case 3:
-                         Console.Write("Enter Start Destination: ");
-                         string start = Console.ReadLine();
-                          Console.Write("Enter End Destination: ");
-                         string end = Console.ReadLine();
-                          Console.Write("Enter Distance (km): ");
-                          if (!decimal.TryParse(Console.ReadLine(), out decimal dist))
+                            Console.Write("Enter Start Destination: ");
+                            string start = Console.ReadLine();
+                            Console.Write("Enter End Destination: ");
+                            string end = Console.ReadLine();
+                            Console.Write("Enter Distance (km): ");
+                            if (!decimal.TryParse(Console.ReadLine(), out decimal dist))
                             {
-                              Console.WriteLine("Invalid distance.");
-                              break;
+                                Console.WriteLine("Invalid distance.");
+                                break;
                             }
-                           Route r = new Route(0, start, end, dist);
+                            Route r = new Route(0, start, end, dist);
                             bool routeResult = service.AddRoute(r);
                             Console.WriteLine(routeResult ? "Route Added" : "Failed to add route.");
                             break;
@@ -176,31 +182,31 @@ namespace app
                             Console.Write("Enter Passenger ID: ");
                             if (!int.TryParse(Console.ReadLine(), out int passengerId))
                             {
-                              Console.WriteLine("Invalid Passenger ID.");
-                              break;
+                                Console.WriteLine("Invalid Passenger ID.");
+                                break;
                             }
                             Console.Write("Enter Booking Date (yyyy-mm-dd): ");
                             if (!DateTime.TryParse(Console.ReadLine(), out DateTime bookingDate))
                             {
-                             Console.WriteLine("Invalid Booking Date.");
-                            break;
+                                Console.WriteLine("Invalid Booking Date.");
+                                break;
                             }
-                            Booking booking = new Booking(0, tripId, passengerId, bookingDate, "Confirmed");
-                            bool bookingResult = service.BookTrip(booking);
+                            bool bookingResult = service.BookTrip(tripId, passengerId, bookingDate);
                             Console.WriteLine(bookingResult ? "Booking Confirmed" : "Booking Failed.");
+
                             break;
                         case 8:
-                           Console.Write("Enter Driver Name: ");
-                           string driverName = Console.ReadLine();
-                          Console.Write("Enter License No: ");
-                          string license = Console.ReadLine();
-                          Console.Write("Enter Phone No: ");
-                          string driverPhone = Console.ReadLine();
-                          Console.Write("Enter Status: ");
-                         string driverStatus = Console.ReadLine();
-                          Driver details = new Driver(0, driverName, license, driverPhone, driverStatus);
-                          bool driverAdded = service.AddDriver(details);
-                          Console.WriteLine(driverAdded ? "Driver added!" : "Driver not added.");
+                            Console.Write("Enter Driver Name: ");
+                            string driverName = Console.ReadLine();
+                            Console.Write("Enter License No: ");
+                            string license = Console.ReadLine();
+                            Console.Write("Enter Phone No: ");
+                            string driverPhone = Console.ReadLine();
+                            Console.Write("Enter Status: ");
+                            string driverStatus = Console.ReadLine();
+                            Driver details = new Driver(0, driverName, license, driverPhone, driverStatus);
+                            bool driverAdded = service.AddDriver(details);
+                            Console.WriteLine(driverAdded ? "Driver added!" : "Driver not added.");
                             break;
                         case 9:
                             Console.Write("Enter Trip ID: ");
@@ -232,37 +238,37 @@ namespace app
                             Console.Write("Enter Passenger ID: ");
                             if (int.TryParse(Console.ReadLine(), out int bookPassengerId))
                             {
-                              List<Booking> bookingsByPassenger = service.GetBookingsByPassenger(bookPassengerId);
+                                List<Booking> bookingsByPassenger = service.GetBookingsByPassenger(bookPassengerId);
                                 foreach (Booking b in bookingsByPassenger)
                                 {
-                                  Console.WriteLine($"BookingID: {b.BookingID}, TripID: {b.TripID}, Status: {b.Status}");
+                                    Console.WriteLine($"BookingID: {b.BookingID}, TripID: {b.TripID}, Status: {b.Status}");
                                 }
                             }
                             else
                             {
-                              Console.WriteLine("Invalid Passenger ID.");
+                                Console.WriteLine("Invalid Passenger ID.");
                             }
                             break;
                         case 14:
                             Console.Write("Enter Trip ID: ");
                             if (int.TryParse(Console.ReadLine(), out int bookTripId))
                             {
-                              List<Booking> bookingsByTrip = service.GetBookingsByTrip(bookTripId);
+                                List<Booking> bookingsByTrip = service.GetBookingsByTrip(bookTripId);
                                 foreach (Booking b in bookingsByTrip)
                                 {
-                                  Console.WriteLine($"BookingID: {b.BookingID}, PassengerID: {b.PassengerID}, Status: {b.Status}");
+                                    Console.WriteLine($"BookingID: {b.BookingID}, PassengerID: {b.PassengerID}, Status: {b.Status}");
                                 }
                             }
                             else
                             {
-                             Console.WriteLine("Invalid Trip ID.");
+                                Console.WriteLine("Invalid Trip ID.");
                             }
                             break;
                         case 15:
                             List<Driver> availableDrivers = service.GetAvailableDrivers();
                             foreach (Driver d in availableDrivers)
                             {
-                             Console.WriteLine($"DriverID: {d.DriverID}, Name: {d.DriverName}, Status: {d.Status}");
+                                Console.WriteLine($"DriverID: {d.DriverID}, Name: {d.DriverName}, Status: {d.Status}");
                             }
                             break;
                         case 16:
@@ -291,11 +297,11 @@ namespace app
                                         Vehicle vehicle = vehicles.FirstOrDefault(veh => veh.VehicleID == id);
                                         if (vehicle != null)
                                         {
-                                         Console.WriteLine($"Vehicle Found: ID: {vehicle.VehicleID}, Model: {vehicle.Model}, Type: {vehicle.Type}, Capacity: {vehicle.Capacity}, Status: {vehicle.Status}");
+                                            Console.WriteLine($"Vehicle Found: ID: {vehicle.VehicleID}, Model: {vehicle.Model}, Type: {vehicle.Type}, Capacity: {vehicle.Capacity}, Status: {vehicle.Status}");
                                         }
                                         else
                                         {
-                                         Console.WriteLine("vehicle not found.");
+                                            Console.WriteLine("vehicle not found.");
                                         }
                                     }
                                     return;
@@ -317,10 +323,11 @@ namespace app
                             string payMethod = Console.ReadLine();
                             Payment pay = new Payment
                             {
-                             BookingID = payBookingId,
-                             Amount = payAmount,
-                             PaymentDate = DateTime.Now,
-                             PaymentMethod = payMethod };
+                                BookingID = payBookingId,
+                                Amount = payAmount,
+                                PaymentDate = DateTime.Now,
+                                PaymentMethod = payMethod
+                            };
                             string payResult = service.AddPayment(pay);
                             Console.WriteLine(payResult);
                             break;
@@ -328,7 +335,7 @@ namespace app
                         case 18:
                             List<Payment> paymentList = service.GetAllPayments();
                             if (paymentList.Count > 0)
-                            { 
+                            {
                                 foreach (Payment payment in paymentList)
                                 {
                                     Console.WriteLine($"PaymentID: {payment.PaymentID}, BookingID: {payment.BookingID}, Amount: {payment.Amount}, Date: {payment.PaymentDate}, Method: {payment.PaymentMethod}");
@@ -339,6 +346,11 @@ namespace app
                                 Console.WriteLine("No payments found.");
                             }
                             break;
+                        case 0:
+                            Console.WriteLine("Exiting...");
+                            running = false;
+                            break;
+
 
                         default:
                             Console.WriteLine("Invalid choice.");
@@ -371,3 +383,5 @@ namespace app
         }
     }
 
+
+}

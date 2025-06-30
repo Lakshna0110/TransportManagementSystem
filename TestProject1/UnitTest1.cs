@@ -19,7 +19,7 @@ namespace TestProject1
 
        
         [Test]
-        public void AllocateDriver_ShouldSucceed_WhenValidTripAndDriver()
+        public void AllocateDriver()
         {
             int tripId = 1;     
             int driverId = 1;   
@@ -31,16 +31,16 @@ namespace TestProject1
 
         [Test]
       
-        public void AddDriver_ShouldReturnTrue()
+        public void AddDriver()
         {
-            var driver = new Driver(0, "Test Driver", "DL124", "9876543210", "Available");
+            var driver = new Driver(0, "Test Driver", "DL133", "9876543210", "Available");
             bool result = _service.AddDriver(driver);
             Assert.IsTrue(result);
         }
 
 
         [Test]
-        public void AddVehicle_ShouldReturnTrue()
+        public void AddVehicle()
         {
             var vehicle = new Vehicle(0, "TestBus", 25, "Bus", "Available");
             bool result = _service.AddVehicle(vehicle);
@@ -50,14 +50,14 @@ namespace TestProject1
 
 
         [Test]
-        public void BookTrip_ShouldReturnTrue()
+        public void BookTrip()
         {
             var booking = new Booking(0, 1, 1, DateTime.Now, "Confirmed");
             bool result = _service.BookTrip(booking);
             Assert.IsTrue(result);
         }
         [Test]
-        public void DeleteVehicle_ShouldThrowVehicleNotFoundException_WhenVehicleDoesNotExist()
+        public void DeleteVehicle()
         {
             int nonExistentVehicleId = -999; 
 

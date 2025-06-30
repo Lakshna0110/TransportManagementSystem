@@ -63,7 +63,7 @@ namespace dao
                         }
                         return true;
                     }
-                    catch (Exception ex)
+                    catch (SqlException ex)
                     {
                      Console.WriteLine(" Error: " + ex.Message);
                      return false;
@@ -193,7 +193,27 @@ namespace dao
         {
             using (SqlConnection con = DBConnUtil.GetConnection())
             {
-                string query = "Iinsert into Bookings (TripID, PassengerID, BookingDate, Status) VALUES (@tripId, @passengerId, @bookingDate, @status)";
+
+                string statusQuery = "SELECT Status FROM Trips WHERE TripID = @tripId";
+                using (SqlCommand statusCmd = new SqlCommand(statusQuery, con))
+                {
+                    statusCmd.Parameters.AddWithValue("@tripId", booking.TripID);
+                    con.Open();
+                    object result = statusCmd.ExecuteScalar();
+                    if (result == null)
+                    {
+                        Console.WriteLine("Trip does not exist.");
+                        return false;
+                    }
+                    string tripStatus = result.ToString();
+                    if (tripStatus == "Cancelled")
+                    {
+                        Console.WriteLine("Cannot book. Trip is cancelled.");
+                        return false;
+                    }
+                }
+
+                string query = "insert into Bookings (TripID, PassengerID, BookingDate, Status) VALUES (@tripId, @passengerId, @bookingDate, @status)";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@tripId", booking.TripID);
@@ -202,7 +222,7 @@ namespace dao
                     cmd.Parameters.AddWithValue("@status", booking.Status);
                     try
                     {
-                        con.Open();
+                       
                         int rows = cmd.ExecuteNonQuery();
                         return rows > 0;
                     }
@@ -214,6 +234,13 @@ namespace dao
                 }
             }
         }
+
+        public bool BookTrip(int tripId, int passengerId, DateTime bookingDate)
+        {
+            Booking booking = new Booking(0, tripId, passengerId, bookingDate, "Confirmed");
+            return BookTrip(booking);
+        }
+
         public List<Vehicle> GetVehicles()
         {
             List<Vehicle> vehicleList = new List<Vehicle>();
@@ -376,7 +403,10 @@ namespace dao
             List<Booking> bookings = new List<Booking>();
             using (SqlConnection con = DBConnUtil.GetConnection())
             {
-                string query = "SELECT BookingID, TripID, PassengerID, BookingDate, Status FROM Bookings WHERE PassengerID = @passengerId";
+                string query = @"SELECT B.BookingID, B.TripID, B.PassengerID, B.BookingDate, B.Status, P.FirstName
+                         FROM Bookings B
+                         INNER JOIN Passengers P ON B.PassengerID = P.PassengerID
+                         WHERE B.PassengerID = @passengerId";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.AddWithValue("@passengerId", passengerId);
@@ -451,7 +481,10 @@ namespace dao
             List<Driver> drivers = new List<Driver>();
             using (SqlConnection con = DBConnUtil.GetConnection())
             {
-                string query = "SELECT DriverID, DriverName, LicenseNumber, PhoneNumber, Status FROM Drivers WHERE Status = 'Available'";
+                string query = @"SELECT DriverID, DriverName, LicenseNumber, PhoneNumber, Status 
+                 FROM Drivers 
+                 WHERE Status = 'Available' 
+                 AND DriverID NOT IN (SELECT DISTINCT DriverID FROM Trips WHERE DriverID IS NOT NULL)";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     try

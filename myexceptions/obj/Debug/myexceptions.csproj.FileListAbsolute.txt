@@ -1,6 +1,0 @@
-C:\Users\VC\source\repos\TransportManagementSystem\myexceptions\bin\Debug\myexceptions.dll
-C:\Users\VC\source\repos\TransportManagementSystem\myexceptions\bin\Debug\myexceptions.pdb
-C:\Users\VC\source\repos\TransportManagementSystem\myexceptions\obj\Debug\myexceptions.csproj.AssemblyReference.cache
-C:\Users\VC\source\repos\TransportManagementSystem\myexceptions\obj\Debug\myexceptions.csproj.CoreCompileInputs.cache
-C:\Users\VC\source\repos\TransportManagementSystem\myexceptions\obj\Debug\myexceptions.dll
-C:\Users\VC\source\repos\TransportManagementSystem\myexceptions\obj\Debug\myexceptions.pdb
