@@ -1,4 +1,4 @@
-﻿namespace util.Migrations
+namespace util.Migrations
 {
     using System;
     using System.Data.Entity;

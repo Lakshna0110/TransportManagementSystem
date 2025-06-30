@@ -33,7 +33,7 @@ namespace TestProject1
       
         public void AddDriver()
         {
-            var driver = new Driver(0, "Test Driver", "DL133", "9876543210", "Available");
+            var driver = new Driver(0, "Test Driver", "DL136", "9876543210", "Available");
             bool result = _service.AddDriver(driver);
             Assert.IsTrue(result);
         }
@@ -42,7 +42,7 @@ namespace TestProject1
         [Test]
         public void AddVehicle()
         {
-            var vehicle = new Vehicle(0, "TestBus", 25, "Bus", "Available");
+            var vehicle = new Vehicle(0, "TestBus", 25, "car", "Available");
             bool result = _service.AddVehicle(vehicle);
             Assert.IsTrue(result);
         }
